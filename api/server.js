@@ -16,8 +16,11 @@ const {
 const middleWare = require('./middleware');
 applyMiddleware(middleWare, app);
 
-
-
+//reference the static build files
+const publicFolder = path.resolve(__dirname, '..', 'build');
+// under start of middleware, but before apply routes
+// root route is serving the static content
+app.use('/', express.static(publicFolder));
 
 // 4. Require routes
 // const {
@@ -32,12 +35,17 @@ app.use('/api/users', userRoutes);
 //emma.com/api/users reference crystalRoutes file
 app.use('/api/crystals', crystalRoutes);
 
-
 // 5. Require conatants
 const { PORT } = require('./utils/constants');
 
 // 7. Utilise routes
 // router.use('/api/books', bookRoutes);
+
+// 2. Add route handler to catch all requests
+router.use('*', (req, res, next) => {
+	const indexFile = path.resolve(publicFolder, 'index.html');
+	res.sendFile(indexFile);
+});
 
 // 3b. Require error handling middleware
 const errorHandlers = require('./middleware/errorHandlers');
