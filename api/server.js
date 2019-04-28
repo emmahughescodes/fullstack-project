@@ -43,7 +43,7 @@ const { PORT } = require('./utils/constants');
 // router.use('/api/books', bookRoutes);
 
 // 2. Add route handler to catch all requests
-router.use('*', (req, res, next) => {
+app.use('*', (req, res, next) => {
 	const indexFile = path.resolve(publicFolder, 'index.html');
 	res.sendFile(indexFile);
 });
