@@ -4,6 +4,7 @@
   "description": "HackerYou Fullstack Masterclass Project",
   "main": "index.js",
   "scripts": {
+    "deploy": "node api/server.js",
     "init": "node scripts/init.js",
     "postinit": "npm run git:remote:set",
     "lint": "semistandard",
@@ -34,7 +35,6 @@
     "@material-ui/icons": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
-    "eslint": "^5.12.0",
     "express": "^4.16.4",
     "history": "^4.9.0",
     "init-package-json": "^1.10.3",
