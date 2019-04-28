@@ -1,0 +1,65 @@
+{
+  "name": "hackeryou-fullstack-project",
+  "version": "1.0.0",
+  "description": "HackerYou Fullstack Masterclass Project",
+  "main": "index.js",
+  "scripts": {
+    "init": "node scripts/init.js",
+    "postinit": "npm run git:remote:set",
+    "lint": "semistandard",
+    "test": "react-scripts test",
+    "start:server": "pm2 start process.config.js",
+    "stop:server": "pm2 delete process.config.js",
+    "logs:server": "pm2 logs /api/ --lines 10",
+    "start:client": "react-scripts start",
+    "build:client": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackerYou/con-ed-full-stack-student-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackerYou/con-ed-full-stack-student-notes/issues"
+  },
+  "homepage": "https://github.com/HackerYou/con-ed-full-stack-student-notes#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "eslint": "^5.12.0",
+    "express": "^4.16.4",
+    "history": "^4.9.0",
+    "init-package-json": "^1.10.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.22",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^5.0.0"
+  },
+  "devDependencies": {
+    "hackeryou-fullstack-react-scripts": "2.3.0",
+    "pm2": "^3.3.1",
+    "semistandard": "github:mikemimik/semistandard"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "proxy": "http://localhost:4000",
+  "semistandard": {
+    "ignore": [
+      "build/**"
+    ]
+  }
+}
