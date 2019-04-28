@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const bodyParser = require('body-parser');
 
 // 1. Create main express intance
