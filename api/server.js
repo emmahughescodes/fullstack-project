@@ -44,7 +44,7 @@ const errorHandlers = require('./middleware/errorHandlers');
 // 8. Apply error handling middleware (meaningfully last)
 applyMiddleware(errorHandlers, app);
 
-const URL = 'mongodb://localhost:27017/crystals';
+const URL = process.env.MONGODB_URI || 'mongodb://localhost:27017/crystals';
 // console.log("hello");
 mongoose
 	.connect(URL, {
